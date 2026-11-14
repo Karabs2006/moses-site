@@ -1,6 +1,8 @@
 const artContainer = document.querySelector(".artwork-images-container");
 const heroImg = document.querySelector(".hero-img");
 const galleryImg = document.querySelector("#gallery");
+const artworkHeader = document.querySelector(".artwork-intro h1");
+const arrow = document.querySelector(".arrow")
 
 const artImages = [
 
@@ -139,6 +141,22 @@ images.forEach((image) =>{
             scale: 1
         })
     })
+})
+
+const arrowTl = gsap.timeline({paused: true});
+
+arrowTl.to(arrow,
+{
+    display: "block",
+    fillOpacity: 1
+})
+
+artworkHeader.addEventListener("mouseenter",()=>{
+    
+arrowTl.restart();
+})
+artworkHeader.addEventListener("mouseleave",()=>{
+arrowTl.reverse();
 })
 
 //SOCIAL SECTION CHANGES COLOUR DEPENDING ON WHICH PLATFORM YOUR ON AND THE IMAGE TOO

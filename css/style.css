@@ -66,13 +66,8 @@ h1{
     background-position: 70% 70%;
     background-size: 100%;
     background-repeat: no-repeat;
-    
-}
-
-#gallery{
     display: flex;
     justify-content: space-between; 
-    width: 100%;
     
 }
 
@@ -97,6 +92,23 @@ h1{
     margin-top: 30px;
     width: 100%;
     overflow: hidden;
+    padding: 20px;
+}
+
+.artwork-intro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.arrow{
+    fill: antiquewhite;
+    width: 100px;
+    height: 100px;
+    margin-left: 20px;
+    display: none;
+    fill-opacity: 0;
 }
 
 .artwork-images-container{
