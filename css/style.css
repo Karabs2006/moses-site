@@ -1,0 +1,96 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #111213;
+}
+
+#hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+
+
+h1{
+    font-size: 8rem;
+    font-family: "Zen Dots", Helvetica, Times, serif;
+}
+
+.hero-info h1{
+    display: flex;
+    color: #E5211D;
+}
+
+.hero-info{
+    width: 10em;
+}
+
+.hero-img{
+    width: 30rem;
+    height: 40rem;
+    background-image: url(../media/hero.jpeg);
+    background-position: 10% 10%;
+    background-size: 105%;
+    border-radius: 20px;
+}
+
+#gallery{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../media/gallery.jpeg);
+    background-position: 70% 70%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    
+}
+
+#gallery{
+    display: flex;
+    justify-content: space-between; 
+    width: 100%;
+    
+}
+
+.gallery-info{
+    margin-left: 50%;
+    
+    
+}
+.gallery-info h1{
+    color: #2E6C7B;
+    padding-top: 10%;
+    
+
+}
+
+.page-btn{
+    padding: 20px;
+}
+
+#artwork-section{
+    color: antiquewhite;
+}
+
+.artwork-images-container{
+    display: flex;
+
+}
+
+/*
+.artwork-img{
+    width: 25em;
+    height: 30em;
+    border-radius: 40px;
+    padding: 20px;
+}
+*/
+
+.artwork-card{
+    background-image: var(--artwork-bg);
+    
+}
