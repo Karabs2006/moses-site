@@ -132,3 +132,37 @@ h1{
     background-image: var(--artwork-bg);
     
 }
+
+.social-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0%;
+}
+
+.social-image {
+    background-image: url(../media/social.jpeg);
+    background-position: 10% 10%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 50%;
+    height: 50rem;
+    margin-left: auto;
+    
+}
+.social-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+
+.platform-card{
+    display: flex;
+    gap: 100%;
+    align-items: center;
+    padding: 30px;
+    width: 100%;
+}
+

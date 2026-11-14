@@ -2,7 +2,8 @@ const artContainer = document.querySelector(".artwork-images-container");
 const heroImg = document.querySelector(".hero-img");
 const galleryImg = document.querySelector("#gallery");
 const artworkHeader = document.querySelector(".artwork-intro h1");
-const arrow = document.querySelector(".arrow")
+const arrow = document.querySelector(".arrow");
+const socialLinksContainer = document.querySelector(".social-links");
 
 const artImages = [
 
@@ -18,6 +19,44 @@ const artImages = [
     "artwork_01.jpeg",
     "artwork_02.jpeg",
 ]
+
+const platforms = [
+
+    {   
+        name: "Tik Tok",
+        image:  "tik-tok.svg",
+        url: "https://www.tiktok.com/"
+
+    },
+    {   
+        name: "Instagram",
+        image:  "instagram.svg",
+        url:"https://www.instagram.com/sandile.moses?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw=="
+
+
+    },
+    {   
+        name: "Whatsapp",
+        image:  "whatsapp.svg"
+
+    }
+]
+
+platforms.forEach((platform) =>{
+
+    if(platform.name != "Whatsapp"){
+        const card = document.createElement("div");
+        card.classList.add("platform-card");
+
+        card.innerHTML =
+        `
+            <img src="./media/${platform.image}">
+            <a href="${platform.url}">${platform.name}</a>
+        `
+
+        socialLinksContainer.appendChild(card);
+    }
+})
 
 
 
