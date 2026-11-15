@@ -4,6 +4,9 @@ const galleryImg = document.querySelector("#gallery");
 const artworkHeader = document.querySelector(".artwork-intro h1");
 const arrow = document.querySelector(".arrow");
 const socialLinksContainer = document.querySelector(".social-links");
+const socialImg = document.querySelector(".social-image");
+const socialSection = document.querySelector(".social-content");
+const navLine = document.querySelector(".nav-line");
 
 const artImages = [
 
@@ -25,38 +28,29 @@ const platforms = [
     {   
         name: "Tik Tok",
         image:  "tik-tok.svg",
-        url: "https://www.tiktok.com/"
+        url: "https://www.tiktok.com/",
+        colorBottom: "#1A1A3A",
+        colorTop:"#6900C4"
 
     },
     {   
         name: "Instagram",
         image:  "instagram.svg",
-        url:"https://www.instagram.com/sandile.moses?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw=="
+        url:"https://www.instagram.com/sandile.moses?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw==",
+        colorBottom: "#FF9443",
+        colorTop:"#FF33D3"
 
 
     },
     {   
         name: "Whatsapp",
-        image:  "whatsapp.svg"
+        image:  "whatsapp.svg",
+        colorBottom: "",
+        colorTop:""
 
     }
 ]
 
-platforms.forEach((platform) =>{
-
-    if(platform.name != "Whatsapp"){
-        const card = document.createElement("div");
-        card.classList.add("platform-card");
-
-        card.innerHTML =
-        `
-            <img src="./media/${platform.image}">
-            <a href="${platform.url}">${platform.name}</a>
-        `
-
-        socialLinksContainer.appendChild(card);
-    }
-})
 
 
 
@@ -89,6 +83,7 @@ function createImgAnim(targetImg, startPercent, endPercent){
 
 let heroImgTl = createImgAnim(heroImg, 105, 110);
 let galleryImgTl = createImgAnim(galleryImg,100, 102);
+let socialImgTl = createImgAnim(socialImg, 100, 104)
 
 /*
     heroImgTl.fromTo(heroImg, {
@@ -115,7 +110,8 @@ function createListeners(target, timeline){
 }
 
 createListeners(heroImg, heroImgTl);
-createListeners(galleryImg, galleryImgTl)
+createListeners(galleryImg, galleryImgTl);
+createListeners(socialImg, socialImgTl)
 
 
 /*
@@ -198,4 +194,69 @@ artworkHeader.addEventListener("mouseleave",()=>{
 arrowTl.reverse();
 })
 
-//SOCIAL SECTION CHANGES COLOUR DEPENDING ON WHICH PLATFORM YOUR ON AND THE IMAGE TOO
+const socialTl = gsap.timeline({paused: true});
+
+socialTl
+    .to(socialSection, {
+
+        "--bg-grad": `linear-gradient(to top,#CCFF00,#111213)`,
+    },0)
+    .fromTo(navLine,
+        { 
+            drawSVG: "0% 0%" 
+        },
+        {   drawSVG: "5% 95%", 
+            duration: 0.3,
+        },0
+        );
+    
+socialSection.addEventListener("mouseenter",()=> {
+    socialTl.restart();
+})
+
+socialSection.addEventListener("mouseleave",()=> {
+    socialTl.reverse();
+})
+
+platforms.forEach((platform) =>{
+
+    if(platform.name != "Whatsapp"){
+        const card = document.createElement("div");
+        card.classList.add("platform-card");
+
+        card.innerHTML =
+        `   
+            <a href="${platform.url}">
+            <img src="./media/${platform.image}" class="platform-img">
+            </a>
+        `
+
+        socialLinksContainer.appendChild(card);
+
+        let linkTl = gsap.timeline({paused: true});
+
+        // SOCIAL SECTION CHANGES COLOUR DEPENDING ON WHICH PLATFORM YOUR ON AND THE IMAGE TOO
+
+        linkTl.to(card,{
+            scale: 1.01,
+            y: 10
+        },0).fromTo(socialSection, {
+                
+            "--bg-grad": `linear-gradient(to top,#CCFF00,#111213)`},
+            {
+                "--bg-grad": `linear-gradient(to top, ${platform.colorBottom}, ${platform.colorTop})`, //CHANGE LINEAR GRADIENT ACCORDING TO PLATFORM OBJECT
+            }
+            
+        ,0)
+
+        card.addEventListener("mouseenter", ()=>{
+            linkTl.restart();
+        });
+
+        card.addEventListener("mouseleave", ()=>{
+            linkTl.reverse();
+        })
+    }
+})
+
+
