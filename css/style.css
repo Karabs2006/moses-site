@@ -4,6 +4,23 @@
     padding: 0;
 }
 
+header{
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+header nav{
+    display: flex;
+    gap: 40px
+    
+}
+
+
+a{
+    text-decoration: none;
+    color: antiquewhite;
+}
 body{
     background-color: #111213;
 }
@@ -41,6 +58,8 @@ h1{
 .hero-info h1{
     display: flex;
     color: #E5211D;
+    opacity: 0;
+    
 }
 
 .hero-info{
@@ -218,4 +237,28 @@ h1{
     flex-direction: column;
     height: 10px;
     
+}
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background-color: #090a0a;
+    color: antiquewhite;
+     font-family: "Cormorant Garamond", serif;
+
+}
+footer img{
+    width: 3em;
+    height: 2em;
+    background-color: #ff5733; /* Your target color */
+    mask: url("icon.png") no-repeat center / contain;
+    -webkit-mask: url("icon.png") no-repeat center / contain;
+    }
+
+.return-btn{
+    width: 20em;
+    height: 3em;
+    border-radius: 20px;
+
 }

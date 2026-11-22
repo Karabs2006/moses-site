@@ -7,6 +7,13 @@ const socialLinksContainer = document.querySelector(".social-links");
 const socialImg = document.querySelector(".social-image");
 const socialSection = document.querySelector(".social-content");
 const navLine = document.querySelector(".nav-line");
+const mainHeading = document.querySelector(".hero-info h1");
+
+gsap.to(mainHeading, {
+    opacity: 1,
+    duration: 2,
+    ease: "power1.inOut"
+})
 
 const artImages = [
 
