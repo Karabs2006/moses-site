@@ -16,6 +16,9 @@ head.innerHTML +=
 header.innerHTML = 
 `<nav>
     <ul>
+        <a href="">Home</a>
+    </ul>
+    <ul>
         <a href="">Gallery</a>
     </ul>
     <ul>

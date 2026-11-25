@@ -262,3 +262,35 @@ footer img{
     border-radius: 20px;
 
 }
+
+.services-img{
+    background-image: url(../media/services.jpeg);
+    background-position: 10% 60%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 50%;
+    height: 50rem;
+
+}
+
+.services-section{
+    display: flex;
+    margin-bottom: 20px;
+    background-color: aliceblue;
+    color: #121212;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.services-info{
+    text-align: center;
+    padding: 10px;
+}
+
+.services-info h1{
+    background-color: #E5211D;
+    color: aliceblue;
+    
+}
+
